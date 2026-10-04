@@ -80,7 +80,7 @@
                        FontAttributes="Bold"
                        TextColor="#1B2430" />
 
-         
+                <!-- Images start -->
                 <Border StrokeShape="RoundRectangle 16"
                         StrokeThickness="1"
                         Stroke="#8A929A"
@@ -91,9 +91,9 @@
                                 StrokeShape="RoundRectangle 10"
                                 StrokeThickness="1"
                                 Stroke="#8A929A">
-                            <Image Source="dotnet_bot.png"
-                                   WidthRequest="44"
-                                   HeightRequest="44"
+                            <Image Source="biogesic.webp"
+                                   WidthRequest="100"
+                                   HeightRequest="100"
                                    HorizontalOptions="Center"
                                    VerticalOptions="Center" />
                         </Border>
@@ -143,9 +143,9 @@
                                 StrokeShape="RoundRectangle 10"
                                 StrokeThickness="1"
                                 Stroke="#8A929A">
-                            <Image Source="dotnet_bot.png"
-                                   WidthRequest="44"
-                                   HeightRequest="44"
+                            <Image Source="neozep.webp"
+                                   WidthRequest="90"
+                                   HeightRequest="90"
                                    HorizontalOptions="Center"
                                    VerticalOptions="Center" />
                         </Border>
@@ -195,9 +195,9 @@
                                 StrokeShape="RoundRectangle 10"
                                 StrokeThickness="1"
                                 Stroke="#8A929A">
-                            <Image Source="dotnet_bot.png"
-                                   WidthRequest="44"
-                                   HeightRequest="44"
+                            <Image Source="solmux.jpg"
+                                   WidthRequest="100"
+                                   HeightRequest="100"
                                    HorizontalOptions="Center"
                                    VerticalOptions="Center" />
                         </Border>

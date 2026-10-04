@@ -1,24 +1,14 @@
-﻿namespace Inventrack
+﻿namespace Inventrack;
+
+public partial class MainPage : ContentPage
 {
-    public partial class MainPage : ContentPage
+    public MainPage()
     {
-        int count = 1 * 2;
+        InitializeComponent();
+    }
 
-        public MainPage()
-        {
-            InitializeComponent();
-        }
-
-        private void OnCounterClicked(object? sender, EventArgs e)
-        {
-            count++;
-
-            if (count == 1)
-                CounterBtn.Text = $"Clicked {count} time";
-            else
-                CounterBtn.Text = $"Clicked {count} times";
-
-            SemanticScreenReader.Announce(CounterBtn.Text);
-        }
+    private async void OnInventoryTapped(object sender, EventArgs e)
+    {
+        await Shell.Current.GoToAsync(nameof(InventoryPage));
     }
 }

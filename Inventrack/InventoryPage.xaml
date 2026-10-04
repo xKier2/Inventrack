@@ -1,86 +1,55 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Inventrack.MainPage"
+             x:Class="Inventrack.InventoryPage"
              BackgroundColor="White"
              Shell.NavBarIsVisible="False"
              NavigationPage.HasNavigationBar="False">
 
-    <Grid RowDefinitions="*, Auto">
+    <Grid RowDefinitions="Auto, Auto, Auto, *, Auto"
+          Padding="20, 20, 20, 12"
+          RowSpacing="16">
 
-        <ScrollView Grid.Row="0">
-            <VerticalStackLayout Spacing="20" Padding="20, 16, 20, 16">
+        <VerticalStackLayout Grid.Row="0" Spacing="4">
+            <Label Text="Inventory"
+                   FontSize="26"
+                   FontAttributes="Bold"
+                   TextColor="#1B2430" />
+            <Label Text="Total Units in Stock"
+                   FontSize="14"
+                   TextColor="#5C6B73" />
+        </VerticalStackLayout>
 
-                <Grid ColumnDefinitions="Auto, *, Auto" VerticalOptions="Center">
-                    <Border Grid.Column="0"
-                            WidthRequest="48"
-                            HeightRequest="48"
-                            StrokeShape="RoundRectangle 24"
-                            StrokeThickness="0">
-                        <Image Source="user.png"
-                               WidthRequest="22"
-                               HeightRequest="22"
-                               HorizontalOptions="Center"
-                               VerticalOptions="Center" />
-                    </Border>
-
-                    <BoxView Grid.Column="1"
-                             HorizontalOptions="Start"
-                             Margin="12, 0, 0, 0"
-                             WidthRequest="110"
-                             HeightRequest="16"
-                             Color="#415265"
-                             VerticalOptions="Center" />
-
-                    <Border Grid.Column="2"
-                            WidthRequest="48"
-                            HeightRequest="48"
-                            StrokeShape="RoundRectangle 24"
-                            StrokeThickness="0">
-                        <Image Source="bell.png"
-                               WidthRequest="22"
-                               HeightRequest="22"
-                               HorizontalOptions="Center"
-                               VerticalOptions="Center" />
-                    </Border>
-                </Grid>
-
-                <VerticalStackLayout Spacing="4">
-                    <Label Text="Hi, Kier"
-                           FontSize="15"
-                           TextColor="#415265" />
-                    <Label Text="Good Morning!"
-                           FontSize="26"
-                           FontAttributes="Bold"
-                           TextColor="#1B2430" />
-                </VerticalStackLayout>
-
-                <Border StrokeShape="RoundRectangle 24"
-                        StrokeThickness="1"
-                        Stroke="#1B2430"
-                        Padding="14, 4"
-                        HeightRequest="48">
-                    <Grid ColumnDefinitions="Auto, *" ColumnSpacing="10" VerticalOptions="Center">
-                        <Image Grid.Column="0"
-                               Source="search.png"
-                               WidthRequest="18"
-                               HeightRequest="18"
-                               VerticalOptions="Center" />
-                        <Entry Grid.Column="1"
-                               Placeholder="Search Product"
-                               PlaceholderColor="#5C6B73"
-                               TextColor="#1B2430"
-                               FontSize="15"
-                               VerticalOptions="Center" />
-                    </Grid>
-                </Border>
-
-                <Label Text="Low Stock Alerts"
+        <Border Grid.Row="1"
+                StrokeShape="RoundRectangle 24"
+                StrokeThickness="1"
+                Stroke="#1B2430"
+                Padding="14, 4"
+                HeightRequest="48">
+            <Grid ColumnDefinitions="Auto, *" ColumnSpacing="10" VerticalOptions="Center">
+                <Image Grid.Column="0"
+                       Source="search.png"
+                       WidthRequest="18"
+                       HeightRequest="18"
+                       VerticalOptions="Center" />
+                <Entry Grid.Column="1"
+                       Placeholder="Search Product"
+                       PlaceholderColor="#5C6B73"
+                       TextColor="#1B2430"
                        FontSize="15"
-                       FontAttributes="Bold"
-                       TextColor="#1B2430" />
+                       VerticalOptions="Center" />
+            </Grid>
+        </Border>
 
-         
+        <Label Grid.Row="2"
+               Text="All Products"
+               FontSize="15"
+               FontAttributes="Bold"
+               TextColor="#1B2430" />
+
+        <ScrollView Grid.Row="3">
+            <VerticalStackLayout Spacing="12">
+
+                <!-- Product 1: Biogesic -->
                 <Border StrokeShape="RoundRectangle 16"
                         StrokeThickness="1"
                         Stroke="#8A929A"
@@ -119,20 +88,21 @@
                                        TextColor="#1B2430"
                                        VerticalOptions="Center" />
                                 <Button Grid.Column="1"
-                                        Text="Reorder"
+                                        Text="Add Product"
                                         FontSize="11"
                                         HeightRequest="32"
                                         Padding="12, 0"
                                         CornerRadius="6"
                                         BorderWidth="1"
-                                        BorderColor="Black"
-                                        Background="White"
+                                        BorderColor="#8A929A"
+                                        BackgroundColor="Transparent"
                                         TextColor="#1B2430" />
                             </Grid>
                         </VerticalStackLayout>
                     </Grid>
                 </Border>
-                
+
+                <!-- Product 2: Neozep -->
                 <Border StrokeShape="RoundRectangle 16"
                         StrokeThickness="1"
                         Stroke="#8A929A"
@@ -171,20 +141,21 @@
                                        TextColor="#1B2430"
                                        VerticalOptions="Center" />
                                 <Button Grid.Column="1"
-                                        Text="Reorder"
+                                        Text="Add Product"
                                         FontSize="11"
                                         HeightRequest="32"
                                         Padding="12, 0"
                                         CornerRadius="6"
                                         BorderWidth="1"
-                                        BorderColor="Black"
-                                        Background="White"
+                                        BorderColor="#8A929A"
+                                        BackgroundColor="Transparent"
                                         TextColor="#1B2430" />
                             </Grid>
                         </VerticalStackLayout>
                     </Grid>
                 </Border>
 
+                <!-- Product 3: Solmux -->
                 <Border StrokeShape="RoundRectangle 16"
                         StrokeThickness="1"
                         Stroke="#8A929A"
@@ -223,138 +194,176 @@
                                        TextColor="#1B2430"
                                        VerticalOptions="Center" />
                                 <Button Grid.Column="1"
-                                        Text="Reorder"
+                                        Text="Add Product"
                                         FontSize="11"
                                         HeightRequest="32"
                                         Padding="12, 0"
                                         CornerRadius="6"
                                         BorderWidth="1"
-                                        BorderColor="Black"
-                                        Background="White"
+                                        BorderColor="#8A929A"
+                                        BackgroundColor="Transparent"
                                         TextColor="#1B2430" />
                             </Grid>
                         </VerticalStackLayout>
                     </Grid>
                 </Border>
 
-                <Label Text="Quick Actions"
-                       FontSize="15"
-                       FontAttributes="Bold"
-                       TextColor="#415265" />
+                <!-- Product 4: Alaxan FR -->
+                <Border StrokeShape="RoundRectangle 16"
+                        StrokeThickness="1"
+                        Stroke="#8A929A"
+                        Padding="12">
+                    <Grid ColumnDefinitions="110, *" ColumnSpacing="14">
+                        <Border Grid.Column="0"
+                                HeightRequest="110"
+                                StrokeShape="RoundRectangle 10"
+                                StrokeThickness="1"
+                                Stroke="#8A929A">
+                            <Image Source="dotnet_bot.png"
+                                   WidthRequest="44"
+                                   HeightRequest="44"
+                                   HorizontalOptions="Center"
+                                   VerticalOptions="Center" />
+                        </Border>
 
-                <Grid ColumnDefinitions="*, *, *" ColumnSpacing="10">
-                    <Border Grid.Column="0"
-                            HeightRequest="52"
-                            StrokeShape="RoundRectangle 14"
-                            StrokeThickness="1"
-                            Stroke="#1B2430">
-                        <VerticalStackLayout Spacing="3" HorizontalOptions="Center" VerticalOptions="Center">
-                            <Image Source="barcode.png"
-                                   WidthRequest="18"
-                                   HeightRequest="18"
-                                   HorizontalOptions="Center" />
-                            <Label Text="Scan Barcode"
+                        <VerticalStackLayout Grid.Column="1" Spacing="4" VerticalOptions="Center">
+                            <Label Text="In Stock"
                                    FontSize="11"
+                                   TextColor="#5C6B73"
+                                   FontAttributes="Bold" />
+                            <Label Text="Alaxan FR Ibuprofen + Paracetamol"
+                                   FontSize="15"
                                    FontAttributes="Bold"
-                                   TextColor="#1B2430"
-                                   HorizontalOptions="Center" />
-                        </VerticalStackLayout>
-                    </Border>
+                                   TextColor="#1B2430" />
+                            <Label Text="Current: 120 caps | Reorder Level: 50 caps"
+                                   FontSize="11"
+                                   TextColor="#5C6B73" />
 
-                    <Border Grid.Column="1"
-                            HeightRequest="52"
-                            StrokeShape="RoundRectangle 14"
-                            StrokeThickness="1"
-                            Stroke="#1B2430">
-                        <VerticalStackLayout Spacing="3" HorizontalOptions="Center" VerticalOptions="Center">
-                            <Image Source="arrows_sync.png"
-                                   WidthRequest="18"
-                                   HeightRequest="18"
-                                   HorizontalOptions="Center" />
-                            <Label Text="Stock In/Out"
-                                   FontSize="11"
-                                   FontAttributes="Bold"
-                                   TextColor="#1B2430"
-                                   HorizontalOptions="Center" />
+                            <Grid ColumnDefinitions="*, Auto" Margin="0, 4, 0, 0" VerticalOptions="Center">
+                                <Label Grid.Column="0"
+                                       Text="₱8.75"
+                                       FontSize="15"
+                                       FontAttributes="Bold"
+                                       TextColor="#1B2430"
+                                       VerticalOptions="Center" />
+                                <Button Grid.Column="1"
+                                        Text="Add Product"
+                                        FontSize="11"
+                                        HeightRequest="32"
+                                        Padding="12, 0"
+                                        CornerRadius="6"
+                                        BorderWidth="1"
+                                        BorderColor="#8A929A"
+                                        BackgroundColor="Transparent"
+                                        TextColor="#1B2430" />
+                            </Grid>
                         </VerticalStackLayout>
-                    </Border>
+                    </Grid>
+                </Border>
 
-                    <Border Grid.Column="2"
-                            HeightRequest="52"
-                            StrokeShape="RoundRectangle 14"
-                            StrokeThickness="1"
-                            Stroke="#1B2430">
-                        <VerticalStackLayout Spacing="3" HorizontalOptions="Center" VerticalOptions="Center">
-                            <Image Source="plus.png"
-                                   WidthRequest="18"
-                                   HeightRequest="18"
-                                   HorizontalOptions="Center" />
-                            <Label Text="New Item"
+                <!-- Product 5: Bioflu -->
+                <Border StrokeShape="RoundRectangle 16"
+                        StrokeThickness="1"
+                        Stroke="#8A929A"
+                        Padding="12">
+                    <Grid ColumnDefinitions="110, *" ColumnSpacing="14">
+                        <Border Grid.Column="0"
+                                HeightRequest="110"
+                                StrokeShape="RoundRectangle 10"
+                                StrokeThickness="1"
+                                Stroke="#8A929A">
+                            <Image Source="dotnet_bot.png"
+                                   WidthRequest="44"
+                                   HeightRequest="44"
+                                   HorizontalOptions="Center"
+                                   VerticalOptions="Center" />
+                        </Border>
+
+                        <VerticalStackLayout Grid.Column="1" Spacing="4" VerticalOptions="Center">
+                            <Label Text="In Stock"
                                    FontSize="11"
+                                   TextColor="#5C6B73"
+                                   FontAttributes="Bold" />
+                            <Label Text="Bioflu 10mg / 2mg / 500mg"
+                                   FontSize="15"
                                    FontAttributes="Bold"
-                                   TextColor="#1B2430"
-                                   HorizontalOptions="Center" />
+                                   TextColor="#1B2430" />
+                            <Label Text="Current: 94 tabs | Reorder Level: 50 tabs"
+                                   FontSize="11"
+                                   TextColor="#5C6B73" />
+
+                            <Grid ColumnDefinitions="*, Auto" Margin="0, 4, 0, 0" VerticalOptions="Center">
+                                <Label Grid.Column="0"
+                                       Text="₱7.00"
+                                       FontSize="15"
+                                       FontAttributes="Bold"
+                                       TextColor="#1B2430"
+                                       VerticalOptions="Center" />
+                                <Button Grid.Column="1"
+                                        Text="Add Product"
+                                        FontSize="11"
+                                        HeightRequest="32"
+                                        Padding="12, 0"
+                                        CornerRadius="6"
+                                        BorderWidth="1"
+                                        BorderColor="#8A929A"
+                                        BackgroundColor="Transparent"
+                                        TextColor="#1B2430" />
+                            </Grid>
                         </VerticalStackLayout>
-                    </Border>
-                </Grid>
+                    </Grid>
+                </Border>
 
             </VerticalStackLayout>
         </ScrollView>
-        <Border Grid.Row="6"
-        StrokeThickness="0"
-        Padding="0, 8, 0, 0">
+
+        <Border Grid.Row="4"
+                StrokeThickness="0"
+                Padding="0, 8, 0, 0">
             <Grid ColumnDefinitions="*, *, *, *">
-
-                <!-- Home Tab -->
+                <!-- Home Tab (Clickable) -->
                 <VerticalStackLayout Grid.Column="0" Spacing="4" HorizontalOptions="Center">
-                    <Image Source="house.png"
-                   WidthRequest="22"
-                   HeightRequest="22"
-                   HorizontalOptions="Center" />
-                    <Label Text="Home"
-                   FontSize="11"
-                   TextColor="#1B2430"
-                   HorizontalOptions="Center" />
-                </VerticalStackLayout>
-
-                <!-- Inventory Tab (Clickable) -->
-                <VerticalStackLayout Grid.Column="1" Spacing="4" HorizontalOptions="Center">
                     <VerticalStackLayout.GestureRecognizers>
-                        <TapGestureRecognizer Tapped="OnInventoryTapped" />
+                        <TapGestureRecognizer Tapped="OnHomeTapped" />
+                        
                     </VerticalStackLayout.GestureRecognizers>
 
+                    <Image Source="house.png" WidthRequest="22" HeightRequest="22" HorizontalOptions="Center" />
+                            
+                    <Label Text="Home" FontSize="11" TextColor="#5C6B73" HorizontalOptions="Center" />
+                </VerticalStackLayout>
+                
+                <VerticalStackLayout Grid.Column="1" Spacing="4" HorizontalOptions="Center">
                     <Image Source="archive.png"
-                   WidthRequest="22"
-                   HeightRequest="22"
-                   HorizontalOptions="Center" />
+                           WidthRequest="22"
+                           HeightRequest="22"
+                           HorizontalOptions="Center" />
                     <Label Text="Inventory"
-                   FontSize="11"
-                   TextColor="#5C6B73"
-                   HorizontalOptions="Center" />
+                           FontSize="11"
+                           TextColor="#1B2430"
+                           HorizontalOptions="Center" />
                 </VerticalStackLayout>
 
-                <!-- Analytics Tab -->
                 <VerticalStackLayout Grid.Column="2" Spacing="4" HorizontalOptions="Center">
                     <Image Source="bar_chart.png"
-                   WidthRequest="22"
-                   HeightRequest="22"
-                   HorizontalOptions="Center" />
+                           WidthRequest="22"
+                           HeightRequest="22"
+                           HorizontalOptions="Center" />
                     <Label Text="Analytics"
-                   FontSize="11"
-                   TextColor="#5C6B73"
-                   HorizontalOptions="Center" />
+                           FontSize="11"
+                           TextColor="#5C6B73"
+                           HorizontalOptions="Center" />
                 </VerticalStackLayout>
 
-                <!-- Settings Tab -->
                 <VerticalStackLayout Grid.Column="3" Spacing="4" HorizontalOptions="Center">
                     <Image Source="gear.png"
-                   WidthRequest="22"
-                   HeightRequest="22"
-                   HorizontalOptions="Center" />
+                           WidthRequest="22"
+                           HeightRequest="22"
+                           HorizontalOptions="Center" />
                     <Label Text="Settings"
-                   FontSize="11"
-                   TextColor="#5C6B73"
-                   HorizontalOptions="Center" />
+                           FontSize="11"
+                           TextColor="#5C6B73"
+                           HorizontalOptions="Center" />
                 </VerticalStackLayout>
             </Grid>
         </Border>

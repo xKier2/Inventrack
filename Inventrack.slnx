@@ -1,3 +1,8 @@
 <Solution>
-  <Project Path="Inventrack/Inventrack.csproj" />
+  <Folder Name="/Solution Items/">
+    <File Path=".gitignore" />
+  </Folder>
+  <Project Path="Inventrack/Inventrack.csproj">
+    <Deploy Solution="Debug|*" />
+  </Project>
 </Solution>
